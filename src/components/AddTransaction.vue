@@ -10,7 +10,7 @@ const db = getDatabase();
 const addTransaction = async () => {
     const user = auth.currentUser
     if(user && amount.value != null){ 
-        const transactionsRef = dbRef(db, `transactions`);
+        const transactionsRef = dbRef(db, `transactions/${user.uid}`);
             
     const newTransaction = {
         type: type.value,
